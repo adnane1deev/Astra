@@ -20,8 +20,8 @@
 	
 #Status - add
 
-	* git status
-	* git add README
+* git status
+* git add README
 
 #Commit
 
