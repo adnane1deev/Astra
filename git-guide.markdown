@@ -25,6 +25,8 @@
 
 #Commit
 
+	git commit
+	
 
 
 
