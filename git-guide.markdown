@@ -54,5 +54,30 @@ getting a comparison between what's in the working directory and the <file> and 
 	git diff
 	git diff HEAD
 
+#Log
+Log is a tool to view the history of all our commits 
+```
+git log
+git log --stat
+git log --oneline
+git log --graph
+git log --graph --oneline
+git log --graph --oneline --decorate
+git log --pretty="%variables"
+```
+Graphical interface
+```
+gitk
+```
 
+#Branch
 
+```
+git branch
+git branch <branch-name>
+```
+
+Move to the new branch
+```
+git checkout <branch-name>
+```
