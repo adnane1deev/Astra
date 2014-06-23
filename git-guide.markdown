@@ -71,6 +71,7 @@ gitk
 ```
 
 #Branch
+Branch is useful if you want to miss around with your code experimenting or developing a new feature and you're afraid of accidentally break you code functionality.
 
 ```
 git branch
