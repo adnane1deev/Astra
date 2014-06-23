@@ -63,6 +63,7 @@ git log --oneline
 git log --graph
 git log --graph --oneline
 git log --graph --oneline --decorate
+git log --graph --oneline --decorate --all
 git log --pretty="%variables"
 ```
 Graphical interface
