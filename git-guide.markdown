@@ -53,6 +53,8 @@ getting a comparison between what's in the working directory and the <file> and 
 	
 	git diff
 	git diff HEAD
+	
+	git diff <hash-1> <hash-2>
 
 #Log
 Log is a tool to view the history of all our commits 
@@ -69,6 +71,7 @@ git log --pretty="%variables"
 Graphical interface
 ```
 gitk
+gitk --all
 ```
 
 #Branch
@@ -87,4 +90,15 @@ git checkout <branch-name>
 Create a new branch and switch to it
 ```
 git checkout -b <branch-name>
+```
+
+Delete branch
+```
+git branch -d <branch-name>
+```
+
+#Merge-Rebase
+Merging the target branch with the master branch
+```
+git merge <target-branch-name>
 ```
