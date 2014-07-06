@@ -107,3 +107,18 @@ Rebasing target branch to master branch for more linear graph
 ```
 git rebase <target-branch-name>
 ```
+
+#Github
+```
+https://help.github.com/articles/generating-ssh-keys
+```
+
+#Remotes - push - pull
+Add remote to the project
+```
+git remote add <remote-name> <link>
+```
+to show the remote 
+```
+git remote
+```
