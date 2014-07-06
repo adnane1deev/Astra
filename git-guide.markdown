@@ -102,3 +102,8 @@ Merging the target branch with the master branch
 ```
 git merge <target-branch-name>
 ```
+
+Rebasing target branch to master branch for more linear graph
+```
+git rebase <target-branch-name>
+```
