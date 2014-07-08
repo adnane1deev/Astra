@@ -14,7 +14,6 @@ git config --global user.email "user email"
 ```
 git config user.name "username"
 git config user.email "user email"
-
 git config --global color.ui true
 ```
 	
@@ -32,8 +31,10 @@ git add README
 #Commit
 ```
 git commit
+```
 
 stage the changes from the files that have previously staged
+```
 git commit -a 
 
 git commit -m "Commit message"
