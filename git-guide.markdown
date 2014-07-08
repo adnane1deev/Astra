@@ -5,34 +5,41 @@
 2. Local	: .git/config
 	
 **Globally :**
-	git config --global user.name "username"
-	git config --global user.email "user email"
+```
+git config --global user.name "username"
+git config --global user.email "user email"
+```
 	
 **Locally :**
-	git config user.name "username"
-	git config user.email "user email"
+```
+git config user.name "username"
+git config user.email "user email"
 
-	git config --global color.ui true
+git config --global color.ui true
+```
 	
 #Initializing
-
-	git init
+```
+git init
+```
 	
 #Status - add
-
-	git status
-	git add README
+```
+git status
+git add README
+```
 
 #Commit
+```
+git commit
 
-	git commit
-	
-	stage the changes from the files that have previously staged
-	git commit -a 
-	
-	git commit -m "Commit message"
-	
-	git commit -am "Commit message"
+stage the changes from the files that have previously staged
+git commit -a 
+
+git commit -m "Commit message"
+
+git commit -am "Commit message"
+```
 	
 #Ignore
 
@@ -53,6 +60,8 @@ getting a comparison between what's in the working directory and the <file> and 
 	
 	git diff
 	git diff HEAD
+	
+	git diff <hash-1> <hash-2>
 
 #Log
 Log is a tool to view the history of all our commits 
@@ -63,14 +72,17 @@ git log --oneline
 git log --graph
 git log --graph --oneline
 git log --graph --oneline --decorate
+git log --graph --oneline --decorate --all
 git log --pretty="%variables"
 ```
 Graphical interface
 ```
 gitk
+gitk --all
 ```
 
 #Branch
+Branch is useful if you want to miss around with your code experimenting or developing a new feature and you're afraid of accidentally break you code functionality.
 
 ```
 git branch
@@ -85,4 +97,57 @@ git checkout <branch-name>
 Create a new branch and switch to it
 ```
 git checkout -b <branch-name>
+```
+
+Delete branch
+```
+git branch -d <branch-name>
+```
+
+#Merge-Rebase
+Merging the target branch with the master branch
+```
+git merge <target-branch-name>
+```
+
+Rebasing target branch to master branch for more linear graph
+```
+git rebase <target-branch-name>
+```
+
+#Github
+```
+https://help.github.com/articles/generating-ssh-keys
+```
+
+#Remotes - push - pull
+
+Add remote to the project
+```
+git remote add <remote-name> <link>
+```
+
+to show the remote 
+```
+git remote
+```
+
+push content up to github
+```
+git push -u <remote-name> <branch-name>
+```
+
+pull changes down from github to our local repository
+```
+git pull
+```
+
+get the changes without merging them
+```
+git fetch
+```
+
+merge the changes to the master branch after looking at them
+```
+git merge <remote-name>/master
 ```
