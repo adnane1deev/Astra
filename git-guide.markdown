@@ -5,34 +5,43 @@
 2. Local	: .git/config
 	
 **Globally :**
-	git config --global user.name "username"
-	git config --global user.email "user email"
+```
+git config --global user.name "username"
+git config --global user.email "user email"
+```
 	
 **Locally :**
-	git config user.name "username"
-	git config user.email "user email"
+```
+git config user.name "username"
+git config user.email "user email"
 
-	git config --global color.ui true
+git config --global color.ui true
+```
 	
 #Initializing
-
-	git init
+```
+git init
+```
 	
 #Status - add
-
-	git status
-	git add README
+```
+git status
+git add README
+```
 
 #Commit
+```
+git commit
+```
 
-	git commit
-	
-	stage the changes from the files that have previously staged
-	git commit -a 
-	
-	git commit -m "Commit message"
-	
-	git commit -am "Commit message"
+stage the changes from the files that have previously staged
+```
+git commit -a 
+
+git commit -m "Commit message"
+
+git commit -am "Commit message"
+```
 	
 #Ignore
 
@@ -41,20 +50,26 @@ Create .gitignore file, in each line of this file I just list a file or folder t
 #Diff
 
 compare file in the current state with the last committed 
-	git diff <file>
+```
+git diff <file>
+```
 	
 compare what's in the staging directory with our latest commit look like
-	git diff --staged <file>
-	or
-	git diff --cached <file>
+```
+git diff --staged <file>
+or
+git diff --cached <file>
+```
 
 getting a comparison between what's in the working directory and the <file> and HEAD version of <file> or basically the last version of <file> that we committed 
-	git diff HEAD <file>
-	
-	git diff
-	git diff HEAD
-	
-	git diff <hash-1> <hash-2>
+```
+git diff HEAD <file>
+
+git diff
+git diff HEAD
+
+git diff <hash-1> <hash-2>
+```
 
 #Log
 Log is a tool to view the history of all our commits 
@@ -114,11 +129,33 @@ https://help.github.com/articles/generating-ssh-keys
 ```
 
 #Remotes - push - pull
+
 Add remote to the project
 ```
 git remote add <remote-name> <link>
 ```
+
 to show the remote 
 ```
 git remote
+```
+
+push content up to github
+```
+git push -u <remote-name> <branch-name>
+```
+
+pull changes down from github to our local repository
+```
+git pull
+```
+
+get the changes without merging them
+```
+git fetch
+```
+
+merge the changes to the master branch after looking at them
+```
+git merge <remote-name>/master
 ```
