@@ -159,3 +159,45 @@ merge the changes to the master branch after looking at them
 ```
 git merge <remote-name>/master
 ```
+
+#Interactive add
+
+```
+git add -i
+```
+
+"git add -i" give us a interactive command prompt
+```
+1: status			- show paths with changes
+2: update			- add working tree state to the staged set of changed
+3: revert			- revert staged set of changes back to the HEAD version
+4: add untracked	- add content of untracked files to the staged set of changes
+5: patch			- pick hunks and update selectively
+6: diff				- view diff between HEAD and index
+7: quit
+8: help
+```
+
+An alternative for of the patch option located in the interactive add command
+```
+git add -p
+```
+
+#Git-stash
+hide the changes that had been made after the last commit
+```
+git stash
+git stash save "stash message"
+git stash list
+```
+Reapply the hidden changes from the stash
+```
+git stash apply
+git stash apply stash@{N}
+git stash pop stash@{N}
+```
+drop a stash
+```
+git stash drop - drop from the top
+git stash drop stash@{N}
+```
