@@ -15,7 +15,7 @@ Installation de monolog/monolog library as following :
 
 # Learning about library versions
 ### Semantic Versioning 2.0.0
-***Summary***
+#### Summary
 
 Given a version number MAJOR.MINOR.PATCH, increment the :
 
@@ -30,7 +30,6 @@ Greater than or equal a {version}
 ...
 "mustache/mustache" : ">= 2.4"
 ...
-
 ```
 
 Between lower {version} and higher {version}
