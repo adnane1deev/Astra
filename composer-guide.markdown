@@ -92,3 +92,12 @@ Show informations about spesific dependency by its name
 ```
 composer show package-name
 ```
+
+# Projects
+
+Setting up a project from command line using composer
+Example :
+```
+composer create-project laravel/laravel
+composer create-project laravel/laravel folder-name package-version
+```
