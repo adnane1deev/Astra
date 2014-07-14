@@ -54,6 +54,7 @@ or
 "mustache/mustache" : "~2.3"	-> 2.4 ... 2.n
 ...
 ```
+
 # Install vs. Update
 ***http://adamcod.es/2013/03/07/composer-install-vs-composer-update.html***
 
@@ -72,3 +73,22 @@ If you've been testing your code with monolog 1.2, and monolog 1.3 gets released
 
 What you really need to do is deploy your updated composer.lock, and then re-run composer install. You should never run composer update in production. If however you deploy a new composer.lock with new dependencies and/or versions (after having run composer update in dev) and then run composer install composer will update and install new your new dependencies.
 
+# Finding packages
+
+Searching for dependencies (package-name)
+```
+composer search package-name
+composer search package-name -N
+```
+
+Interactive command prompt for searching and installing dependencies
+```
+composer require
+composer require package-name
+composer require package-name package-version
+```
+
+Show informations about spesific dependency by its name
+```
+composer show package-name
+```
