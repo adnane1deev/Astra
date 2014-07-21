@@ -1,4 +1,2 @@
-#Astra Hell Network
+#Astra helpers
 
-	{ Astra social network }
-	2014/2015
