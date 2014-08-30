@@ -37,30 +37,30 @@ project-path/application/routes.php
 # Passing Variables to Views
 ### method-1
 ```php
-	$name = 'Adnane Boulben';
-	return View::make('home.about')->with('name', $name);
-	# or
-	return View::make('home.about')->with(
-		array(
-			'name' => $name, 
-			'age' => 22)
-		);
+$name = 'Adnane Boulben';
+return View::make('home.about')->with('name', $name);
+# or
+return View::make('home.about')->with(
+	array(
+		'name' => $name, 
+		'age' => 22)
+	);
 ```
 
 ### method-2
 ```php
-	$name = 'Adnane Boulben';
-	$data = array('name' => $name, 'age' => 23);
-	return View::make('home.about', $data);
+$name = 'Adnane Boulben';
+$data = array('name' => $name, 'age' => 23);
+return View::make('home.about', $data);
 ```
 
 ### method-3
 Using magic method
 ```php
-	$name = 'Adnane Boulben';
-	$view = View::make('home.about');
-	$view->name = $name;
-	$view->age = 22;
+$name = 'Adnane Boulben';
+$view = View::make('home.about');
+$view->name = $name;
+$view->age = 22;
 
-	return $view;
+return $view;
 ```
