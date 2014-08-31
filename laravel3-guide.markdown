@@ -64,3 +64,29 @@ $view->age = 22;
 
 return $view;
 ```
+
+# Database access
+### Raw queries
+http://three.laravel.com/docs/database/raw
+```php
+# return array of objects
+$posts = DB::query('select * from posts');
+```
+```php
+# return an object
+$post = DB::first('select * from posts');
+```
+```php
+$title = 'Another title';
+$body = 'Another post body';
+
+# return boolean => insert statement
+$posts = DB::query('insert into posts values(null, ?, ?)', array($title, $body));
+# OR
+$posts = DB::query('insert into posts values(null, :title, :body)', array($title, $body)); 
+```
+```php
+# getting the value of a single column:
+$title = DB::only('select title from posts where id = 4'); 
+```
+
