@@ -136,7 +136,7 @@ $posts->links();
 ```
 
 ### Fluent query builder
-three.laravel.com/docs/database/eloquent
+http://three.laravel.com/docs/database/eloquent
 ```php
 $users = User::all(); # return anarray
 $users = User::find(1); # return an object
