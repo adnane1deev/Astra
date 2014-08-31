@@ -134,3 +134,42 @@ $posts = DB::table('posts')->paginate($perpage);
 # Generate the pagination links:
 $posts->links();
 ```
+
+### Fluent query builder
+three.laravel.com/docs/database/eloquent
+```php
+$users = User::all(); # return anarray
+$users = User::find(1); # return an object
+$users = User::find(1)->only('email'); # getting the value of a single column:
+```
+```php
+/* using dynamic methods */
+$email = 'deev@deev';
+$pass = 'passdeev';
+
+$user = User::where_email_and_password($email, $pass)->first();
+echo ($user) ? 'correct' : 'not correct';
+```
+### inserting method-1
+```php
+$user = new User();
+$user->email = 'laravel@laravel';
+$user->password = Hash::make('laravel');
+$user->save();
+```
+### inserting method-2
+```php
+$user = User::create(array('email' => 'king@king', 'password' => Hash::make('king')));
+echo ($user) ? 'Success' : 'fail';
+```
+### updating and deleting
+```php
+# updating
+$user = User::find(1);
+$user->password = Hash::make('deev');
+echo $user->save();
+
+# deleting
+$user = User::find(10);
+echo $user->delete();
+```
