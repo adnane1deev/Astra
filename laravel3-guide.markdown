@@ -135,7 +135,7 @@ $posts = DB::table('posts')->paginate($perpage);
 $posts->links();
 ```
 
-### Fluent query builder
+### Laravel ORM Eloquent
 http://three.laravel.com/docs/database/eloquent
 ```php
 $users = User::all(); # return anarray
@@ -172,4 +172,93 @@ echo $user->save();
 # deleting
 $user = User::find(10);
 echo $user->delete();
+```
+
+### Version control with migration
+```
+# after starting execute the migrate:install command
+php artisan migrate:install
+
+# <name> should describe what the migration will do 
+php artisan migrate:make <name> 
+php artisan migrate:make users_table_creator
+
+php artisan migrate => up()
+php artisan migrate:rollback => down()
+php artisan migrate:reset
+```
+
+# Controllers
+### Registring controller
+```php
+Route::get('/ctrl', 'home@index'); # Home_controller => action_index() method
+Route::get('/ctrl/about', 'home@about'); # Home_controller => action_about() method
+Route::controller('ctrl');
+Route::controller('users');
+//or Route::controller(array('ctrl', 'users'));
+
+// automatically detect all the controllers
+Route::controller(Controller::detect());
+```
+### Restful controllers
+1. at the top of the controller class define a variable as bellow:
+```php
+public $restful = true;
+```
+2. then change methods as bellow
+```php
+// From
+public function action_index(){}
+
+// To
+public function get_index(){} /* or, */ public function post_index(){}
+```
+### Defining REST
+```php
+# empty
+```
+### Named routes
+```php
+// if you want to work restfuly 
+           //route                 //route name         //controller@action
+Route::get('photos', array('as' => 'photos', 'uses' => 'photos@index'));
+Route::get('photos/new', array('as' => 'new_photo', 'uses' => 'photos@new'));
+Route::get('photos/(:any)', array('as' => 'show_photo', 'uses' => 'photos@show'));
+Route::get('photos/(:any)/edit', array('as' => 'edit_photo', 'uses' => 'photos@edit'));
+Route::get('photos/(:any)/delete', array('as' => 'delete_photo', 'uses' => 'photos@delete'));
+
+Route::post('photos', 'photos@index');
+Route::put('photos/(:any)', 'photos@update');
+Route::delete('photos/(:any)', 'photos@destroy');
+```
+```php
+                      // route name  // text to display
+{{ HTML::link_to_route('new_photo', 'Create a new photo') }}
+                      // route name  // text to display     // parameters needed by the route
+{{ HTML::link_to_action('photos@edit', 'Create a new photo', array('id' => 'asus')) }}
+```
+### Nested controller
+```php
+// Controllers may be located within 
+// any number of sub-directories within 
+// the main application/controllers folder.
+
+// Define the controller class and store it in controllers/admin/panel.php.
+class Admin_Panel_Controller extends Base_Controller
+{
+	public function action_index()
+	{
+		//
+	}
+}
+
+// Register the nested controller with the router using "dot" syntax:
+Route::controller('admin.panel');
+
+/*
+	Note: When using nested controllers, 
+	always register your controllers from 
+	most nested to least nested in order 
+	to avoid shadowing controller routes.
+*/
 ```
